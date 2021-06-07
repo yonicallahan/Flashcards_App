@@ -1,56 +1,47 @@
 import React from "react";
+import { Route, Switch } from "react-router-dom";
 import Header from "./Header";
 import NotFound from "./NotFound";
-import Homie from "../components/Homie"
-import NewDeck from "../components/NewDeck"
-import { Switch, Route } from "react-router-dom"
-import Study from "../components/Study"
-import CurrentDeck from "../components/CurrentDeck"
-import EditCard from "../components/EditCard"
-import EditDeck from "../components/EditDeck"
-import AddCard from "../components/AddCard"
+import HomePage from "../Home/HomePage";
+import DeckView from "../Decks/DeckView";
+import CreateDeck from "../Home/CreateDeck";
+import StudyView from "../Study/StudyView";
+import AddCards from "../Cards/AddCards";
+import EditDeck from "../Decks/EditDeck";
+import EditCard from "../Cards/EditCard";
 
 function Layout() {
   return (
     <>
       <Header />
-      <Switch>
-        <Route path="/decks/new">
-          <NewDeck />
-        </Route>
-
-        <Route path="/decks/:deckId/edit">
-          <EditDeck />
-        </Route>
-
-        <Route path="/decks/:deckId/cards/:cardId/edit">
-          <EditCard />
-        </Route>
-        
-        <Route path="/decks/:deckId/study">
-          <Study />
-        </Route>
-        
-        <Route path="/decks/:deckId/cards/new">
-          <AddCard />
-        </Route>
-
-        <Route exact path="/decks/:deckId">
-          <CurrentDeck />
-        </Route>
-
-        <Route exact path="/">
-          <Homie />
-        </Route>
-
-        <Route>
-          <div className="container">
+      <div className="container">
+        <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route path="/decks/new">
+            <CreateDeck />
+          </Route>
+          <Route path="/decks/:deckId/study">
+            <StudyView />
+          </Route>
+          <Route path="/decks/:deckId/edit">
+            <EditDeck />
+          </Route>
+          <Route path="/decks/:deckId/cards/new">
+            <AddCards />
+          </Route>
+          <Route path="/decks/:deckId/cards/:cardId/edit">
+            <EditCard />
+          </Route>
+          <Route path="/decks/:deckId">
+            <DeckView />
+          </Route>
+          <Route>
             <NotFound />
-          </div>
-        </Route>
-
-      </Switch>
-
+          </Route>
+        </Switch>
+      </div>
     </>
   );
 }
