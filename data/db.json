@@ -1,0 +1,36 @@
+{
+  "decks": [
+    {
+      "deckid": 1,
+      "name": "Test Deck",
+      "description": "This is my test deck",
+      "id": 1
+    },
+    {
+      "deckid": 2,
+      "name": "Mock Study Deck 13",
+      "description": "MDS13",
+      "id": 2
+    }
+  ],
+  "cards": [
+    {
+      "front": "Card 2 front",
+      "back": "Card 2 back",
+      "deckId": 1,
+      "id": 2
+    },
+    {
+      "front": "Card 3 front",
+      "back": "Card 3 back",
+      "deckId": 1,
+      "id": 3
+    },
+    {
+      "front": "nfgxn gzddz",
+      "back": "gfn gfznz",
+      "deckId": 1,
+      "id": 4
+    }
+  ]
+}
